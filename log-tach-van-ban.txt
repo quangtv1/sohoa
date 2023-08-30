@@ -1,0 +1,95 @@
+$ source tach_van_ban.sh
+Bat dau tach 10. Hop Thanh:  Sun May 14 23:54:02 SEAST 2023
+____________________________
+HT.CDCL_001.07.05.H28_1998.1062.pdf: tách dải trang 3-4: page 4 ngoài dải
+HT.CDCL_001.07.05.H28_1998.1272.pdf: tách dải trang 3-4: page 4 ngoài dải
+HT.CDCL_001.07.05.H28_1998.30.pdf: tách dải trang 3-4: page 4 ngoài dải
+HT.CDCL_001.07.05.H28_1998.617.pdf: tách dải trang 3-4: page 3 ngoài dải
+HT.CDCL_001.07.05.H28_1998.878.pdf: tách dải trang 3-4: page 3 ngoài dải
+HT.CDCL_001.07.05.H28_1999.1276.pdf: tách dải trang 3-4: page 4 ngoài dải
+HT.CGCNLN_001.07.05.H28_2012.570.pdf: tách dải trang 15-18: page 18 ngoài dải
+HT.CGCN_001.07.05.H28_2003.114.pdf: tách dải trang 9-10: page 9 ngoài dải
+HT.CGCN_001.07.05.H28_2003.114.pdf: tách dải trang 11-12: page 11 ngoài dải
+HT.CGCN_001.07.05.H28_2003.115.pdf: tách dải trang 9-10: page 9 ngoài dải
+HT.CGCN_001.07.05.H28_2003.115.pdf: tách dải trang 11-12: page 11 ngoài dải
+HT.CGCN_001.07.05.H28_2004.126.pdf: tách dải trang 9-10: page 9 ngoài dải
+HT.CGCN_001.07.05.H28_2004.126.pdf: tách dải trang 11-12: page 11 ngoài dải
+HT.CN_001.07.05.H28_2006.11.pdf: tách dải trang 29-30: page 29 ngoài dải
+qpdf: error at * in numeric range 11-12*-15-16: unexpected dash
+HT.CN_001.07.05.H28_2012.113.pdf: tách dải trang 33-34: page 33 ngoài dải
+HT.DKBD_001.07.05.H28_2019.497.pdf: tách dải trang 21-22: page 21 ngoài dải
+HT.DKBD_001.07.05.H28_2019.552.pdf: tách dải trang 27-28: page 28 ngoài dải
+HT.DKBD_001.07.05.H28_2019.590.pdf: tách dải trang 7-30: page 30 ngoài dải
+HT.DKBD_001.07.05.H28_2019.590.pdf: tách dải trang 31-32: page 31 ngoài dải
+HT.TC_001.07.05.H28_2009.51.pdf: tách dải trang 23-24: page 23 ngoài dải
+HT.TC_001.07.05.H28_2012.80.pdf: tách dải trang 23-34: page 34 ngoài dải
+HT.TC_001.07.05.H28_2016.113.pdf: tách dải trang 23-34: page 34 ngoài dải
+HT.TK_001.07.05.H28_2015.21.pdf: tách dải trang 33-34: page 34 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 3-4: page 3 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 5-12: page 5 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 13-14: page 13 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 15-16: page 15 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 17-18: page 17 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 19-20: page 19 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 21-22: page 21 ngoài dải
+HT.TK_001.07.05.H28_2019.41.pdf: tách dải trang 23-24: page 23 ngoài dải
+HT.CGCNLN_001.07.05.H28_1995.158.pdf: tách dải trang 1-2: page 2 ngoài dải
+Ket thuc tach 10. Hop Thanh:  Mon May 15 00:38:40 SEAST 2023
+
+
+
+
+admin@SOHOA MINGW64 /d/HoaBinh/7. DanHoa/BAN_GIAO
+$ ./tach_van_ban.sh
+Bat dau tach 7.Dan Hoa:  Mon May 15 00:58:52 SEAST 2023
+____________________________
+qpdf: open DH.CGCN_001.07.05.H28_1994.99.pdf: No such file or directory
+qpdf: parsing numeric range for DH.CGCN_001.07.05.H28_1995.169.pdf: error in numeric range 4-4: number 4 out of range
+qpdf: error at * in numeric range 8-8,35-35,37-37,*: number expected
+For help:
+  qpdf --help=usage       usage information
+  qpdf --help=topic       help on a topic
+  qpdf --help=--option    help on an option
+  qpdf --help             general help and a topic list
+qpdf: error at * in numeric range 9-9*-,13-13: unexpected dash
+For help:
+  qpdf --help=usage       usage information
+  qpdf --help=topic       help on a topic
+  qpdf --help=--option    help on an option
+  qpdf --help             general help and a topic list
+qpdf: error at * in numeric range 22-22*-: unexpected dash
+For help:
+  qpdf --help=usage       usage information
+  qpdf --help=topic       help on a topic
+  qpdf --help=--option    help on an option
+  qpdf --help             general help and a topic list
+qpdf: parsing numeric range for DH.CGCN_001.07.05.H28_2012.494.pdf: error in numeric range 11-113: number 113 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.300.pdf: error in numeric range 2-7: number 7 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.402.pdf: error in numeric range 3-8: number 8 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2012.440.pdf: error in numeric range 16-19: number 19 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2012.496.pdf: error in numeric range 17-20: number 20 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2012.497.pdf: error in numeric range 14-15: number 14 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2012.516.pdf: error in numeric range 19-24: number 19 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.141.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.161.pdf: error in numeric range 2-7: number 7 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.164.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.169.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.170.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.173.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.180.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.181.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.182.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: parsing numeric range for DH.CDCL_001.07.05.H28_2000.186.pdf: error in numeric range 2-5: number 5 out of range
+qpdf: open DH.BD_001.07.05.H28_2016.10.pdf: No such file or directory
+qpdf: parsing numeric range for DH.BD_001.07.05.H28_2017.22.pdf: error in numeric range 5-7: number 7 out of range
+qpdf: parsing numeric range for DH.BD_001.07.05.H28_2017.22.pdf: error in numeric range 8-9: number 8 out of range
+qpdf: parsing numeric range for DH.BD_001.07.05.H28_2018.115.pdf: error in numeric range 4-5: number 5 out of range
+qpdf: parsing numeric range for DH.BD_001.07.05.H28_2018.69.pdf: error in numeric range 6-8: number 8 out of range
+qpdf: parsing numeric range for DH.BD_001.07.05.H28_2019.249.pdf: error in numeric range 5-6: number 6 out of range
+qpdf: parsing numeric range for DH.BD_001.07.05.H28_2019.322.pdf: error in numeric range 4-6: number 6 out of range
+Ket thuc tach 7.Dan Hoa:  Mon May 15 01:32:19 SEAST 2023
+admin@SOHOA MINGW64 /d/HoaBinh/7. DanHoa/BAN_GIAO
+
+
+
+
