@@ -1,14 +1,22 @@
-
-# Đếm số file pdf trong 1 thư mục
-# find . f -name "*.pdf" | wc -l
-# find . -iname "*.pdf" > quynhlam.sh
-
 import os
 import openpyxl
 from PyPDF4 import PdfFileReader
-from datetime import datetime
+from datetime import datetime 
 
- 
+# Đường dẫn tuyệt đối đến thư mục chứa tất cả các tệp PDF cần xử lý
+#pdf_folder = '/mnt/d/04. Phường Thịnh Lang'
+pdf_folder = 'C:\\Users\\TTCNTT\\Desktop'
+
+def count_pdf_files(folder):
+    pdf_count = 0
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            if file.endswith('.pdf'):
+                pdf_count += 1
+    return pdf_count
+
+# Đếm số lượng file PDF trong toàn bộ cây thư mục
+total_pdf_files = count_pdf_files(pdf_folder)
 
 # Hàm kiểm tra trang pdf có phải là A3 không và trả về vị trí của trang A3 nếu có
 def check_a3_page(pdf_reader, page_num):
@@ -43,11 +51,8 @@ def count_a3_pages(file_path):
                 a3_pages.append(a3_page_num)
         return a3_count, a3_pages
 
-
-# Đường dẫn tuyệt đối đến thư mục chứa tất cả các tệp PDF cần xử lý
-
-#pdf_folder = '/mnt/g/Shared drives/SCAN/CongThuong-HoaBinh'
-pdf_folder = '/mnt/g/Shared drives/SCAN/TNMT-HoaBinh/15. Thinh Lang-A3/'
+# Lấy tên thư mục cha và thêm ".xlsx" vào tên
+excel_file_name = os.path.basename(os.path.normpath(pdf_folder)) + '.xlsx'
 
 print(f'Bắt đầu đếm A3 thư mục: {pdf_folder}')
 print('Điều kiện thoả trang A3 là: abs(width - height) >= 300')
@@ -59,10 +64,11 @@ worksheet = workbook.active
 worksheet.title = 'Page Count'
 
 # Ghi header cho bảng
-worksheet.cell(row=1, column=1, value='File Name')
-worksheet.cell(row=1, column=2, value='Total Pages')
-worksheet.cell(row=1, column=3, value='A3 Page Count')
-worksheet.cell(row=1, column=4, value='A3 Page Position')
+worksheet.cell(row=1, column=1, value='File Order')
+worksheet.cell(row=1, column=2, value='File Path')
+worksheet.cell(row=1, column=3, value='Total Pages')
+worksheet.cell(row=1, column=4, value='A3 Page Count')
+worksheet.cell(row=1, column=5, value='A3 Page Position')
 
 # total_a3_pages = 0
 # total_total_pages = 0
@@ -79,41 +85,45 @@ def process_pdf_files(pdf_folder):
         for file in files:
             if file.endswith('.pdf'):
                 file_path = os.path.join(root, file)
+                abs_file_path = os.path.abspath(file_path)  # Lấy đường dẫn tuyệt đối của file PDF
+
                 try:
                     with open(file_path, 'rb') as f:
                         pdf_reader = PdfFileReader(f)
                         total_pages = pdf_reader.getNumPages()
                         a3_count, a3_pages = count_a3_pages(file_path)
-
                         total_a3_pages += a3_count
                         total_total_pages += total_pages
-
+                     
                         # Ghi dữ liệu vào bảng
-                        worksheet.cell(row=row_num, column=1, value=os.path.basename(file_path))
-                        worksheet.cell(row=row_num, column=2, value=total_pages)
-                        worksheet.cell(row=row_num, column=3, value=a3_count)
-                        worksheet.cell(row=row_num, column=4, value=','.join(map(str, a3_pages)))
+                        worksheet.cell(row=row_num, column=1, value=f'{row_num - 1}/{total_pdf_files}')
+                        worksheet.cell(row=row_num, column=2, value=abs_file_path)
+                        worksheet.cell(row=row_num, column=3, value=total_pages)
+                        worksheet.cell(row=row_num, column=4, value=a3_count)
+                        worksheet.cell(row=row_num, column=5, value=','.join(map(str, a3_pages)))                        
 
-                        # In thông tin số trang A3 của từng tập tin
-                        print(f'{os.path.basename(file_path)}, A3: {a3_count}/{total_pages} , Vị trí A3: {a3_pages}')
+                        # In thông tin số thứ tự, đường dẫn tuyệt đối, số trang A3 của từng tập tin
+                        print(f'Pdf thứ: {row_num - 1}/{total_pdf_files}; {abs_file_path}; Số trang A3: {a3_count}/{total_pages}; Vị trí A3: {a3_pages}')
 
                         row_num += 1
                 except Exception as e:
                     print(f"Error processing file {file_path}: {e}")
                     continue
+                 
     # Ghi dữ liệu Tong vào cuoi bảng
     worksheet.cell(row=row_num, column=1, value="Tổng")
-    worksheet.cell(row=row_num, column=2, value=total_total_pages)
-    worksheet.cell(row=row_num, column=3, value=total_a3_pages)
-    worksheet.cell(row=row_num, column=4, value=hientai)    
+    worksheet.cell(row=row_num, column=3, value=total_total_pages)
+    worksheet.cell(row=row_num, column=4, value=total_a3_pages)
+    worksheet.cell(row=row_num, column=5, value=hientai)    
     # Tong quy ra A4
-    worksheet.cell(row=row_num+1, column=2, value=(total_total_pages+total_a3_pages))
+    worksheet.cell(row=row_num+1, column=3, value=(total_total_pages+total_a3_pages))
 
     # In thông tin tổng số trang A3 của toàn bộ thư mục
     print(f'Total A3 pages/ Total pages: {total_a3_pages}/{total_total_pages} = {total_a3_pages+total_total_pages}')
-    
 
 process_pdf_files(pdf_folder)
 
-workbook.save('exel/Thinh-Lang-A3.xlsx')
-print("File được lưu tại: exel/Thinh-Lang-A3.xlsx")
+# Lưu file Excel trong cùng thư mục chứa script Python
+excel_file_path = excel_file_name
+workbook.save(excel_file_path)
+print(f"File được lưu tại: {excel_file_path}")
